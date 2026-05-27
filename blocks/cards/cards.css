@@ -1,27 +1,137 @@
+/* CRECI Brasil — Cards Block (Detran-SP inspired) */
 .cards > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
   gap: 24px;
+  grid-template-columns: 1fr;
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  background: white;
+  border: 1.5px solid var(--Protocolo);
+  border-radius: var(--card-radius);
+  padding: 28px 24px;
+  transition: box-shadow var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards > ul > li:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
+/* Accent line at top of card */
+.cards > ul > li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--Credencial);
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.cards > ul > li:hover::before {
+  opacity: 1;
+}
+
+/* Optional image area */
 .cards .cards-card-image {
-  line-height: 0;
+  display: none;
 }
 
-.cards > ul > li img {
+.cards .cards-card-image picture,
+.cards .cards-card-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 160px;
   object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Show image if present */
+.cards > ul > li:has(.cards-card-image img) .cards-card-image {
+  display: block;
+  margin: -28px -24px 0;
+  overflow: hidden;
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+
+.cards .cards-card-body h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--Perícia);
+  line-height: 1.3;
+}
+
+.cards .cards-card-body p {
+  font-size: var(--body-font-size-m);
+  color: var(--Vistoria);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cards .cards-card-body a.button {
+  margin-top: 16px;
+}
+
+/* Icon cards (service cards with leading icon/number) */
+.cards .cards-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--Habite-se);
+  border: 1.5px solid rgb(0 161 29 / 0.2);
+  color: var(--Credencial);
+  border-radius: var(--btn-radius);
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+@media (min-width: 600px) {
+  .cards > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2-col variant */
+.cards.two-col > ul {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  .cards.two-col > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 4-col variant */
+.cards.four-col > ul {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 900px) {
+  .cards.four-col > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
