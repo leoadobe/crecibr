@@ -1,0 +1,100 @@
+/* CRECI Brasil — Search Bar (used on search results pages) */
+.search-bar-wrapper {
+  background: var(--Fiscalização);
+  padding: 0;
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 50;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+}
+
+.search-bar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 10px 24px;
+}
+
+.search-bar .search-bar-form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-bar .search-bar-form select,
+.search-bar .search-bar-form input[type='text'] {
+  background: white;
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 9px 12px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: var(--Perícia);
+  flex: 1;
+  min-width: 120px;
+  transition: box-shadow var(--transition);
+}
+
+.search-bar .search-bar-form select:focus,
+.search-bar .search-bar-form input[type='text']:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--Registro);
+}
+
+.search-bar .search-bar-form input[type='text'] {
+  min-width: 180px;
+}
+
+.search-bar .search-bar-btn {
+  background: var(--Registro);
+  color: var(--Perícia);
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 9px 20px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.search-bar .search-bar-btn:hover {
+  background: #e8bb00;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Result count / breadcrumb strip */
+.search-bar .search-bar-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0 0;
+  font-size: 13px;
+  color: rgb(255 255 255 / 0.75);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.search-bar .search-bar-meta strong {
+  color: white;
+}
+
+@media (min-width: 900px) {
+  .search-bar .search-bar-form {
+    flex-wrap: nowrap;
+  }
+
+  .search-bar .search-bar-form select {
+    max-width: 160px;
+  }
+
+  .search-bar .search-bar-form input[type='text'] {
+    max-width: 280px;
+  }
+}
