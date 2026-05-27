@@ -1,37 +1,174 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
-  padding: 0;
+/* CRECI Brasil — Hero Block (search-led split layout) */
+.hero-wrapper {
+  background-color: var(--Habite-se);
 }
 
 .hero {
-  position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: grid;
+  gap: 40px;
+  padding: 56px 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Left column: headline + copy */
+.hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero .hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--Credencial);
+  margin: 0;
 }
 
 .hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--Perícia);
+  margin: 0;
 }
 
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+.hero .hero-body {
+  font-size: 16px;
+  color: var(--Vistoria);
+  margin: 0;
+  line-height: 1.7;
 }
 
-.hero img {
-  object-fit: cover;
+/* Search card */
+.hero .hero-search {
+  background: white;
+  border-radius: var(--card-radius);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  border: 1.5px solid var(--Protocolo);
+}
+
+.hero .hero-search h2,
+.hero .hero-search h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: var(--Perícia);
+}
+
+.hero .search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero .search-form select,
+.hero .search-form input[type='text'] {
+  border: 1.5px solid var(--Protocolo);
+  border-radius: var(--btn-radius);
+  padding: 10px 14px;
+  font-size: 14px;
   width: 100%;
-  height: 100%;
+  font-family: var(--body-font-family);
+  background: white;
+  color: var(--Perícia);
+  transition: border-color var(--transition);
+  cursor: pointer;
 }
 
-@media (width >= 900px) {
+.hero .search-form select:focus,
+.hero .search-form input[type='text']:focus {
+  outline: none;
+  border-color: var(--Credencial);
+  box-shadow: 0 0 0 3px rgb(0 161 29 / 0.12);
+}
+
+.hero .search-form-btn {
+  background-color: var(--Fiscalização);
+  color: white;
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 13px 24px;
+  font-family: var(--body-font-family);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.hero .search-form-btn:hover {
+  background-color: var(--Credencial);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Right column: stats + trust */
+.hero .hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero .stat-card {
+  background: white;
+  border: 1.5px solid var(--Protocolo);
+  border-radius: var(--card-radius);
+  padding: 24px;
+  transition: box-shadow var(--transition);
+}
+
+.hero .stat-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.hero .stat-number {
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--Credencial);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero .stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--Vistoria);
+}
+
+.hero .hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--Credencial);
+  font-weight: 500;
+  padding: 14px 16px;
+  border: 1.5px solid rgb(0 201 34 / 0.3);
+  border-radius: var(--card-radius);
+  background: white;
+}
+
+.hero .hero-trust svg {
+  flex-shrink: 0;
+}
+
+@media (min-width: 900px) {
   .hero {
-    padding: 40px 32px;
+    grid-template-columns: 1fr 1fr;
+    padding: 80px 48px;
+    gap: 64px;
+    align-items: center;
   }
 }
