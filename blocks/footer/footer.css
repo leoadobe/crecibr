@@ -1,20 +1,168 @@
+/* CRECI Brasil — Footer */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--Fiscalização);
+  color: white;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+footer .footer-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 24px 24px;
 }
 
-footer .footer p {
+/* Brand + links grid */
+footer .footer-content {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+footer .footer-brand a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+footer .footer-brand img {
+  height: 32px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+footer .footer-brand p {
+  font-size: 14px;
+  color: rgb(255 255 255 / 0.75);
+  line-height: 1.7;
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer .footer-links h4 {
+  font-family: var(--heading-font-family);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.55);
+  margin: 0 0 14px;
+}
+
+footer .footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer .footer-links ul li a {
+  font-size: 14px;
+  color: rgb(255 255 255 / 0.8);
+  text-decoration: none;
+  transition: color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+footer .footer-links ul li a:hover {
+  color: white;
+}
+
+/* Accessibility controls */
+footer .footer-a11y {
+  padding: 20px 0;
+  border-top: 1px solid rgb(255 255 255 / 0.1);
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+footer .footer-a11y-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.5);
+}
+
+footer .footer-a11y-btn {
+  background: rgb(255 255 255 / 0.1);
+  color: white;
+  border: 1px solid rgb(255 255 255 / 0.2);
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  transition: background-color var(--transition);
+  line-height: 1;
+}
+
+footer .footer-a11y-btn:hover,
+footer .footer-a11y-btn.active {
+  background: rgb(255 255 255 / 0.2);
+  transform: none;
+  box-shadow: none;
+}
+
+/* Bottom bar */
+footer .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+footer .footer-bottom p {
+  font-size: 12px;
+  color: rgb(255 255 255 / 0.5);
+  margin: 0;
+}
+
+footer .footer-seal {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgb(255 255 255 / 0.5);
+}
+
+/* High-contrast mode */
+body.high-contrast footer {
+  background: #000;
+  border-top: 2px solid #fff;
+}
+
+body.high-contrast footer .footer-brand a,
+body.high-contrast footer .footer-links ul li a,
+body.high-contrast footer .footer-bottom p {
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  footer .footer-content {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  footer .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  footer .footer-wrapper {
+    padding: 64px 48px 32px;
   }
 }
