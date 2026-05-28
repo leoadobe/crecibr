@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Busca de Imóveis — CRECI Brasil</title>
+  <meta name="description" content="Busque imóveis para compra ou aluguel com corretores credenciados pelo CRECI em todo o Brasil.">
+  <link rel="stylesheet" href="/styles/fonts.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body class="appear">
+<header></header>
+<main>
+
+  <!-- Sticky search bar -->
+  <div class="section search-bar-wrapper">
+    <div class="search-bar block" data-block-name="search-bar" data-block-status="initialized">
+    </div>
+  </div>
+
+  <!-- Results header -->
+  <div class="section">
+    <div>
+      <nav aria-label="Localização na hierarquia do site">
+        <ol style="display:flex;gap:8px;list-style:none;padding:0;margin:0 0 24px;font-size:13px;color:var(--Vistoria)">
+          <li><a href="/" style="color:var(--Consulta)">Início</a></li>
+          <li aria-hidden="true" style="color:var(--Protocolo)">›</li>
+          <li><a href="/busca" style="color:var(--Consulta)">Busca</a></li>
+          <li aria-hidden="true" style="color:var(--Protocolo)">›</li>
+          <li aria-current="page" style="color:var(--Vistoria)">Casa — Comprar</li>
+        </ol>
+      </nav>
+
+      <h1>Casas para Comprar</h1>
+      <p style="color:var(--Vistoria);font-size:14px;">Exibindo resultados com corretores CRECI ativos · <strong style="color:var(--Perícia)">Ordenar por:</strong>
+        <select style="display:inline;width:auto;padding:4px 8px;font-size:13px;border:1px solid var(--Protocolo);border-radius:var(--btn-radius);">
+          <option>Mais relevante</option>
+          <option>Menor preço</option>
+          <option>Maior preço</option>
+          <option>Mais recente</option>
+        </select>
+      </p>
+    </div>
+  </div>
+
+  <!-- Results grid -->
+  <div class="section" style="padding-top:0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px">
+
+      <!-- Property card 1 -->
+      <div class="property-card block" data-block-name="property-card" data-block-status="initialized" data-type="Comprar">
+        <div><div>R$ 450.000</div></div>
+        <div><div>Casa com 3 quartos — Lapa, São Paulo</div></div>
+        <div><div>Lapa, São Paulo - SP</div></div>
+        <div><div>3 quartos | 2 banheiros | 120 m²</div></div>
+      </div>
+
+      <!-- Property card 2 -->
+      <div class="property-card block" data-block-name="property-card" data-block-status="initialized" data-type="Comprar">
+        <div><div>R$ 680.000</div></div>
+        <div><div>Casa ampla com quintal — Santana, São Paulo</div></div>
+        <div><div>Santana, São Paulo - SP</div></div>
+        <div><div>4 quartos | 3 banheiros | 180 m²</div></div>
+      </div>
+
+      <!-- Property card 3 -->
+      <div class="property-card block" data-block-name="property-card" data-block-status="initialized" data-type="Comprar">
+        <div><div>R$ 310.000</div></div>
+        <div><div>Casa em condomínio fechado — Osasco, SP</div></div>
+        <div><div>Osasco - SP</div></div>
+        <div><div>3 quartos | 1 banheiro | 90 m²</div></div>
+      </div>
+
+      <!-- Property card 4 -->
+      <div class="property-card block" data-block-name="property-card" data-block-status="initialized" data-type="Comprar">
+        <div><div>R$ 520.000</div></div>
+        <div><div>Sobrado moderno — Mooca, São Paulo</div></div>
+        <div><div>Mooca, São Paulo - SP</div></div>
+        <div><div>3 quartos | 2 banheiros | 140 m²</div></div>
+      </div>
+
+      <!-- Property card 5 -->
+      <div class="property-card block" data-block-name="property-card" data-block-status="initialized" data-type="Comprar">
+        <div><div>R$ 890.000</div></div>
+        <div><div>Casa de alto padrão — Jardins, São Paulo</div></div>
+        <div><div>Jardins, São Paulo - SP</div></div>
+        <div><div>4 quartos | 4 banheiros | 280 m²</div></div>
+      </div>
+
+      <!-- Property card 6 -->
+      <div class="property-card block" data-block-name="property-card" data-block-status="initialized" data-type="Comprar">
+        <div><div>R$ 395.000</div></div>
+        <div><div>Casa térrea reformada — Ipiranga, São Paulo</div></div>
+        <div><div>Ipiranga, São Paulo - SP</div></div>
+        <div><div>3 quartos | 2 banheiros | 110 m²</div></div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Paginação dos resultados" style="margin-top:40px;display:flex;justify-content:center;gap:8px">
+      <span style="display:inline-flex;align-items:center;padding:8px 14px;background:var(--Fiscalização);color:white;border-radius:var(--btn-radius);font-size:14px;font-weight:600">1</span>
+      <a href="?page=2" style="display:inline-flex;align-items:center;padding:8px 14px;border:1.5px solid var(--Protocolo);border-radius:var(--btn-radius);font-size:14px;color:var(--Perícia)">2</a>
+      <a href="?page=3" style="display:inline-flex;align-items:center;padding:8px 14px;border:1.5px solid var(--Protocolo);border-radius:var(--btn-radius);font-size:14px;color:var(--Perícia)">3</a>
+      <span style="display:inline-flex;align-items:center;padding:8px 10px;font-size:14px;color:var(--Vistoria)">…</span>
+      <a href="?page=12" style="display:inline-flex;align-items:center;padding:8px 14px;border:1.5px solid var(--Protocolo);border-radius:var(--btn-radius);font-size:14px;color:var(--Perícia)">12</a>
+      <a href="?page=2" aria-label="Próxima página" style="display:inline-flex;align-items:center;padding:8px 14px;border:1.5px solid var(--Protocolo);border-radius:var(--btn-radius);font-size:14px;color:var(--Perícia)">›</a>
+    </nav>
+  </div>
+
+</main>
+<footer></footer>
+</body>
+</html>

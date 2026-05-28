@@ -1,0 +1,76 @@
+/* CRECI Brasil — Category Links block */
+.category-links-wrapper {
+  padding: var(--section-padding-y) 0;
+}
+
+.category-links h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  color: var(--Perícia);
+  margin: 0 0 32px;
+}
+
+.category-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.category-links ul li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: white;
+  border: 1.5px solid var(--Protocolo);
+  border-radius: var(--card-radius);
+  color: var(--Perícia);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition), color var(--transition), 
+              transform var(--transition), box-shadow var(--transition);
+}
+
+.category-links ul li a:hover {
+  border-color: var(--Fiscalização);
+  color: var(--Fiscalização);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.category-links ul li a::before {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+/* Category icons via data or nth-child */
+.category-links ul li:nth-child(1) a::before { content: '🏠'; }
+.category-links ul li:nth-child(2) a::before { content: '🏢'; }
+.category-links ul li:nth-child(3) a::before { content: '🌱'; }
+.category-links ul li:nth-child(4) a::before { content: '🏪'; }
+.category-links ul li:nth-child(5) a::before { content: '🌾'; }
+.category-links ul li:nth-child(6) a::before { content: '🔑'; }
+
+@media (min-width: 600px) {
+  .category-links ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .category-links ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .category-links ul li a {
+    padding: 20px 24px;
+  }
+}

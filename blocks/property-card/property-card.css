@@ -1,0 +1,167 @@
+/* CRECI Brasil — Property Card Block */
+.property-card {
+  background: white;
+  border: 1.5px solid var(--Protocolo);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.property-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Image area */
+.property-card .property-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--Habite-se);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.property-card .property-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.property-card:hover .property-image img {
+  transform: scale(1.03);
+}
+
+.property-card .property-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--Protocolo);
+}
+
+/* Pill badge (Comprar / Alugar) */
+.property-card .property-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--Fiscalização);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  z-index: 1;
+  line-height: 1;
+}
+
+/* Favorite toggle */
+.property-card .property-fav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.15);
+  color: var(--Vistoria);
+  z-index: 1;
+  transition: transform var(--transition), box-shadow var(--transition);
+  padding: 0;
+}
+
+.property-card .property-fav:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+}
+
+.property-card .property-fav.active svg path {
+  fill: #e53e3e;
+  stroke: #e53e3e;
+}
+
+/* Body */
+.property-card .property-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.property-card .property-price {
+  font-family: var(--heading-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--Perícia);
+  line-height: 1;
+}
+
+.property-card .property-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--Perícia);
+  margin: 2px 0 0;
+  line-height: 1.4;
+}
+
+.property-card .property-location {
+  font-size: 13px;
+  color: var(--Vistoria);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.property-card .property-specs {
+  font-size: 12px;
+  color: var(--Vistoria);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+  border-top: 1px solid var(--Protocolo);
+  margin-top: 4px;
+}
+
+.property-card .property-specs span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* CRECI badge footer */
+.property-card .property-creci {
+  padding: 10px 16px;
+  border-top: 1px solid var(--Protocolo);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--Habite-se);
+}
+
+.property-card .property-creci .badge-green {
+  font-size: 10px;
+}
+
+.property-card .property-creci a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--Credencial);
+  transition: color var(--transition);
+}
+
+.property-card .property-creci a:hover {
+  color: var(--Fiscalização);
+}
