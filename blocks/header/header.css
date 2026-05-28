@@ -1,4 +1,13 @@
 /* CRECI Brasil — Header / Nav */
+
+/* 4px brand stripe at very top */
+header .nav-wrapper::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: var(--Fiscalização);
+}
+
 header .nav-wrapper {
   background-color: white;
   border-bottom: 1px solid var(--Protocolo);
@@ -109,6 +118,19 @@ header .nav-brand img {
   width: auto;
 }
 
+/* Logo text wordmark */
+header .nav-logo-text {
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--Fiscalização);
+  letter-spacing: -0.02em;
+}
+
+header .nav-logo-text span {
+  color: var(--Lavoura);
+}
+
 /* Nav sections */
 header .nav-sections {
   grid-area: sections;
@@ -174,17 +196,29 @@ header .nav-tools {
   gap: 12px;
 }
 
-header .nav-tools a.button:any-link {
+/* CTA button in nav tools (both old .button and new .nav-cta) */
+header .nav-tools a.button:any-link,
+header .nav-tools .nav-cta:any-link,
+header .nav-tools .nav-cta {
+  display: inline-flex;
+  align-items: center;
   padding: 8px 16px;
   font-size: 14px;
+  font-weight: 600;
+  font-family: var(--heading-font-family);
+  text-decoration: none;
   background: transparent;
   color: var(--Fiscalização);
-  border-color: var(--Fiscalização);
+  border: 1.5px solid var(--Fiscalização);
+  border-radius: var(--btn-radius);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
 }
 
-header .nav-tools a.button:any-link:hover {
+header .nav-tools a.button:any-link:hover,
+header .nav-tools .nav-cta:hover {
   background: var(--Fiscalização);
   color: white;
+  transform: translateY(-1px);
 }
 
 /* Mobile expanded */
